@@ -1,0 +1,4 @@
+s3.endpoint: http://localhost:4566
+# s3.path.style.access: true
+s3.access-key: your-access-key 
+s3.secret-key: your-secret-key

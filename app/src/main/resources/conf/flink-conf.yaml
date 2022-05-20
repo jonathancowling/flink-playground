@@ -1,4 +1,21 @@
-s3.endpoint: http://localhost:4566
+# s3.endpoint: http://localhost:4566
+# fs.s3a.endpoint: http://localhost:4566
+# s3a.endpoint: http://localhost:4566
+# fs.obs.endpoint: http://localhost:4566
 # s3.path.style.access: true
-s3.access-key: your-access-key 
-s3.secret-key: your-secret-key
+# s3.access-key: key 
+# s3.access.key: key 
+# fs.s3a.access.key: key
+# # s3.secret-key: secret
+# # s3.secret.key: secret
+# fs.s3a.secret.key: secret
+
+# s3.impl: org.apache.hadoop.fs.s3a.S3AFileSystem
+# s3.buffer.dir: ./tmp                           
+s3.endpoint: http://localhost:4566
+# fs.s3a.bucket.output.endpoint: http://localhost:4566
+s3.path.style.access: true
+s3.access.key: '***'
+s3.secret.key: '***'
+s3.aws.credentials.provider: org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider
+# s3.aws.credentials.provider: com.amazonaws.auth.AWSStaticCredentialsProvider

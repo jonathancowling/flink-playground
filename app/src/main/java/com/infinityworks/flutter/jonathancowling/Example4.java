@@ -14,6 +14,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.filesystem.StreamingFileSink;
 import org.apache.flink.streaming.connectors.kinesis.FlinkKinesisConsumer;
 import org.apache.hadoop.fs.s3a.AWSCredentialProviderList;
+import org.apache.hadoop.fs.s3a.S3AFileSystem;
 
 public class Example4 {
 
@@ -28,11 +29,9 @@ public class Example4 {
 		// final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(new Configuration().set(ConfigOptions.key("s3.endpoint").stringType().noDefaultValue(), "http://localhost:4566"));
 		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
-		Logger.getGlobal().info(env.getConfig().toString());
-
 		env.addSource(new FlinkKinesisConsumer<>("input", new SimpleStringSchema(), prop))
      		.map(String::toUpperCase)
-			.addSink(StreamingFileSink.forRowFormat(new Path("s3://output/"), (String element, OutputStream stream) -> {
+			.addSink(StreamingFileSink.forRowFormat(new Path("s3://output/output"), (String element, OutputStream stream) -> {
 				PrintStream out = new PrintStream(stream);
 				out.println(element);
 			})

@@ -12,10 +12,14 @@
 
 # s3.impl: org.apache.hadoop.fs.s3a.S3AFileSystem
 # s3.buffer.dir: ./tmp                           
-s3.endpoint: http://localhost:4566
 # fs.s3a.bucket.output.endpoint: http://localhost:4566
+# s3a.endpoint: http://localhost:4566
+s3.endpoint: http://localhost:4566
 s3.path.style.access: true
-s3.access.key: '***'
-s3.secret.key: '***'
-s3.aws.credentials.provider: org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider
+# s3.proxy.host: localhost
+# s3.proxy.port: 8080
+# s3.access.key: ""
+# s3.secret.key: ""
+# s3a.aws.credentials.provider: org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider
+# s3.aws.credentials.provider: org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider
 # s3.aws.credentials.provider: com.amazonaws.auth.AWSStaticCredentialsProvider

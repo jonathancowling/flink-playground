@@ -10,6 +10,7 @@
 
     <modules>
         <module>app</module>
-        <module>cdk</module>
+        <module>app-test</module>
+        <!-- <module>cdk</module> -->
     </modules>
 </project>
